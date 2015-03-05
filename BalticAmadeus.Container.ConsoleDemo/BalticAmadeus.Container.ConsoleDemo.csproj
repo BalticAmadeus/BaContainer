@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleOutput.cs" />
+    <Compile Include="FileLoggingProxy.cs" />
     <Compile Include="IOutput.cs" />
+    <Compile Include="FileLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

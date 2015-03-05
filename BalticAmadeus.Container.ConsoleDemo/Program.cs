@@ -8,7 +8,9 @@ namespace BalticAmadeus.Container.ConsoleDemo
 		{
 			// basic container usage demo
 			var builder = new ContainerBuilder();
-			builder.For<IOutput>().Use<ConsoleOutput>();
+
+		    builder.For<FileLogger>().Use(() => new FileLogger("output.txt"));
+			builder.For<IOutput>().Use<ConsoleOutput>().DecorateWithProxy<FileLoggingProxy>();
 
 			using (var container = builder.Build())
 			{
